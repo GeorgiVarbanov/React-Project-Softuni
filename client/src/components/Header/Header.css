@@ -1,11 +1,11 @@
 @font-face {
     font-family: Vecna;
-    src: url(../../public/Fonts/Vecna-oppx.ttf);
+    src: url(/Fonts/Vecna-oppx.ttf);
 }
 
 @font-face {
     font-family: BreatheFire;
-    src: url(../../public/Fonts/BreatheFireIii-PKLOB.ttf);
+    src: url(/Fonts/BreatheFireIii-PKLOB.ttf);
 }
 .nav-bar-li{
     list-style: none;
