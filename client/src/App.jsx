@@ -6,6 +6,7 @@ import About from "./components/About/About.jsx";
 import Scenarios from "./components/Scenarios/Scenarios.jsx";
 import Login from "./components/Users/Login/Login.jsx";
 import Register from "./components/Users/Register/Register.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/users/login" element={<Login />} />
         <Route path="/users/register" element={<Register />} />
       </Routes>
+      <Footer/>
     </>
   )
 }
