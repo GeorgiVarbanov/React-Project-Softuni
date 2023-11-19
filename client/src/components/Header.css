@@ -1,3 +1,12 @@
+@font-face {
+    font-family: Vecna;
+    src: url(../../public/Fonts/Vecna-oppx.ttf);
+}
+
+@font-face {
+    font-family: BreatheFire;
+    src: url(../../public/Fonts/BreatheFireIii-PKLOB.ttf);
+}
 .nav-bar-li{
     list-style: none;
     padding-top: 7px;
@@ -6,11 +15,12 @@
 .link {
     text-decoration: none;
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-family: Vecna;
 }
 
 .link:hover{
-    color: orange;
+    color: lightgreen;
 }
 
 header{
@@ -30,7 +40,9 @@ header{
 .logo{
     padding-top: 7px;
 }
+
 .navbar .logo .link-logo{
+    font-family: BreatheFire;
     text-decoration: none;
     color: #fff;
     font-size: 2.5rem;
