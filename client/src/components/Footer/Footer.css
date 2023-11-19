@@ -20,7 +20,8 @@ ul {
 
 .footer-col {
     width: 25%;
-    padding: 0 15px;
+    padding-left: 0 15px;
+    justify-content: space-between;
 }
 
 .footer-col h4 {
