@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
+import paths from "./paths.js";
+
 import Header from './components/Header/Header.jsx'
 import Home from "./components/Home/Home.jsx";
 import About from "./components/About/About.jsx";
@@ -14,11 +16,11 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/scenarios" element={<Scenarios />} />
-        <Route path="/users/login" element={<Login />} />
-        <Route path="/users/register" element={<Register />} />
+        <Route path={paths.home} element={<Home />} />
+        <Route path={paths.about} element={<About />} />
+        <Route path={paths.scenarios} element={<Scenarios />} />
+        <Route path={paths.login} element={<Login />} />
+        <Route path={paths.register} element={<Register />} />
       </Routes>
       <Footer/>
     </>
