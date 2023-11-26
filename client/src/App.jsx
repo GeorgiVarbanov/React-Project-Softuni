@@ -10,8 +10,14 @@ import Login from "./components/Users/Login/Login.jsx";
 import Register from "./components/Users/Register/Register.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
-function App() {
+import { useState } from "react";
 
+function App() {
+  const [auth, setAuth] = useState();
+
+  const loginSubmitHandler = (values) => {
+    console.log(values);
+  }
   return (
     <>
       <Header />
@@ -19,7 +25,7 @@ function App() {
         <Route path={paths.home} element={<Home />} />
         <Route path={paths.about} element={<About />} />
         <Route path={paths.scenarios} element={<Scenarios />} />
-        <Route path={paths.login} element={<Login />} />
+        <Route path={paths.login} element={<Login loginSubmitHandler={loginSubmitHandler}/>} />
         <Route path={paths.register} element={<Register />} />
       </Routes>
       <Footer/>

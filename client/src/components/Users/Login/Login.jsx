@@ -3,18 +3,25 @@ import "./Login.css"
 
 import useForm from "../../../hooks/useForm.js";
 
+const LoginFormKeys = {
+    EMAIL: "email",
+    PASSWORD: "password",
+}
 
-const Login = () => {
-    const {values, onChange, onSubmit} = useForm({
-        email: "",
-        password: "",
+
+const Login = ({
+    loginSubmitHandler
+}) => {
+    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+        [LoginFormKeys.EMAIL]: '',
+        [LoginFormKeys.PASSWORD]: '',
     });
 
     return (
         <form className="login-cover" onSubmit={onSubmit}>
             <h1>Login</h1>
-            <input type="email" id="email" name="email" placeholder="Email" onChange={onChange} value={values.email}/>
-            <input type="password" id="password" name="password" placeholder="Password" onChange={onChange} value={values.password}/>
+            <input type="email" id="email" name={LoginFormKeys.EMAIL} placeholder="Email" onChange={onChange} value={values[LoginFormKeys.EMAIL]} />
+            <input type="password" id="password" name={LoginFormKeys.PASSWORD} placeholder="Password" onChange={onChange} value={values[LoginFormKeys.PASSWORD]} />
 
             <button className="login-btn">Login</button>
 
