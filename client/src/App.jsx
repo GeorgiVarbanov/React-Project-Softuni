@@ -11,6 +11,7 @@ import Register from "./components/Users/Register/Register.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
 import { useState } from "react";
+import AuthContext from "./contexts/authContext.js";
 
 function App() {
   const [auth, setAuth] = useState();
@@ -19,17 +20,21 @@ function App() {
     console.log(values);
   }
   return (
+    <AuthContext.Provider value={ {loginSubmitHandler} }>
     <>
       <Header />
+
       <Routes>
         <Route path={paths.home} element={<Home />} />
         <Route path={paths.about} element={<About />} />
         <Route path={paths.scenarios} element={<Scenarios />} />
-        <Route path={paths.login} element={<Login loginSubmitHandler={loginSubmitHandler}/>} />
+        <Route path={paths.login} element={<Login />} />
         <Route path={paths.register} element={<Register />} />
       </Routes>
+      
       <Footer/>
     </>
+    </AuthContext.Provider>
   )
 }
 
