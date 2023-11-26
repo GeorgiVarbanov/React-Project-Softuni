@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Home.css"
 
+import paths from "../../paths.js";
+
 const Home = () => {
     return (
         <section>
@@ -15,7 +17,7 @@ const Home = () => {
                         and your Dungeons & Dragons journey takes on a personalized touch. We extend a heartfelt welcome to our haven
                         of creativity, where bespoke DnD scenarios come to life.
                     </p>
-                    <Link to="/users/register" className="button">CREATE AN ACCOUNT</Link>
+                    <Link to={paths.register} className="button">CREATE AN ACCOUNT</Link>
                 </div>
             </div>
         </section>
