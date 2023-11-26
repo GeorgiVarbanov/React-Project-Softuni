@@ -3,7 +3,7 @@ import "./Register.css"
 
 const Register = () => {
     return(
-        <form className="cover">
+        <form className="register-cover">
             <h1 className="register">Register</h1>
             <input type="text" placeholder="Email" />
             <input type="password" placeholder="Password" />

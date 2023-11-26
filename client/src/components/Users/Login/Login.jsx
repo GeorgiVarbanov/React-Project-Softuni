@@ -3,7 +3,7 @@ import "./Login.css"
 
 const Login = () => {
     return (
-        <form className="cover">
+        <form className="login-cover">
             <h1>Login</h1>
             <input type="text" placeholder="Email" />
             <input type="password" placeholder="Password" />
