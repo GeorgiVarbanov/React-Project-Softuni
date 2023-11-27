@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import paths from "./paths.js";
 import * as authService from "./services/authService.js"
@@ -15,12 +15,19 @@ import { useState } from "react";
 import AuthContext from "./contexts/authContext.js";
 
 function App() {
+  const navigate = useNavigate();
+
   const [auth, setAuth] = useState();
 
-  const loginSubmitHandler = (values) => {
-    console.log(values);
-    authService.login(values.email, values.password)
-  }
+  const loginSubmitHandler = async (values) => {
+    const result = await authService.login(values.email, values.password);
+
+    setAuth(result);
+
+    navigate(paths.home);
+  };
+
+
   return (
     <AuthContext.Provider value={ {loginSubmitHandler} }>
     <>
