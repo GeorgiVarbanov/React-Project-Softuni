@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import paths from "./paths.js";
+import * as authService from "./services/authService.js"
 
 import Header from './components/Header/Header.jsx'
 import Home from "./components/Home/Home.jsx";
@@ -18,6 +19,7 @@ function App() {
 
   const loginSubmitHandler = (values) => {
     console.log(values);
+    authService.login(values.email, values.password)
   }
   return (
     <AuthContext.Provider value={ {loginSubmitHandler} }>
