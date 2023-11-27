@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./Header.css"
 
-const Header = () => {
+import AuthContext from "../../contexts/authContext.js";
 
+const Header = () => {
+    const {
+        isAuthenticated
+    } = useContext(AuthContext);
     const [isDropDownOpen, setIsDropDownOpen] = useState(false);
 
     const toggleDropDownHandler = () => {
@@ -20,9 +24,20 @@ const Header = () => {
                     <li className="nav-bar-li"><Link to="/" className="link">Home</Link></li>
                     <li className="nav-bar-li"><Link to="/about" className="link">About</Link></li>
                     <li className="nav-bar-li"><Link to="/scenarios" className="link">Scenarios</Link></li>
-                    <li className="nav-bar-li"><Link to="/users/login" className="link">Login</Link></li>
-                    <li className="nav-bar-li"><Link to="/users/register" className="link">Register</Link></li>
-                    <li className="nav-bar-li"><Link to="/users/logout" className="link">Logout</Link></li>
+                    {isAuthenticated && (
+                        <>
+                            <li className="nav-bar-li"><Link to="/scenarios/create" className="link">Create Scenario</Link></li>
+                            <li className="nav-bar-li"><Link to="/users/logout" className="link">Logout</Link></li>
+                        </>
+                    )}
+
+                    {!isAuthenticated && (
+                        <>
+                        <li className="nav-bar-li"><Link to="/users/login" className="link">Login</Link></li>
+                        <li className="nav-bar-li"><Link to="/users/register" className="link">Register</Link></li>
+                        </>
+                    )}
+                    
                 </ul>
                 <div className="toggle-btn" onClick={toggleDropDownHandler}>
                     <i className="fa-solid fa-bars"></i>

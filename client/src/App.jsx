@@ -7,6 +7,7 @@ import Header from './components/Header/Header.jsx'
 import Home from "./components/Home/Home.jsx";
 import About from "./components/About/About.jsx";
 import Scenarios from "./components/Scenarios/Scenarios.jsx";
+import CreateScenario from "./components/Scenarios/CreateScenario/CreateScenario.jsx";
 import Login from "./components/Users/Login/Login.jsx";
 import Register from "./components/Users/Register/Register.jsx";
 import Footer from "./components/Footer/Footer.jsx";
@@ -17,19 +18,24 @@ import AuthContext from "./contexts/authContext.js";
 function App() {
   const navigate = useNavigate();
 
-  const [auth, setAuth] = useState();
+  const [auth, setAuth] = useState({});
 
   const loginSubmitHandler = async (values) => {
     const result = await authService.login(values.email, values.password);
 
     setAuth(result);
-
     navigate(paths.home);
   };
 
+  const values = {
+    loginSubmitHandler,
+    username: auth.username,
+    email: auth.email,
+    isAuthenticated: !!auth.accessToken,
+  }
 
   return (
-    <AuthContext.Provider value={ {loginSubmitHandler} }>
+    <AuthContext.Provider value={ values }>
     <>
       <Header />
 
@@ -37,6 +43,7 @@ function App() {
         <Route path={paths.home} element={<Home />} />
         <Route path={paths.about} element={<About />} />
         <Route path={paths.scenarios} element={<Scenarios />} />
+        <Route path={paths.create} element={<CreateScenario />} />
         <Route path={paths.login} element={<Login />} />
         <Route path={paths.register} element={<Register />} />
       </Routes>
