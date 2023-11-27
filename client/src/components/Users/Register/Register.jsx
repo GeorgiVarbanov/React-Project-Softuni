@@ -9,7 +9,7 @@ const Register = () => {
 
     return (
         <form className="register-cover" onSubmit={onSubmit}>
-            <h1 className="register">Register</h1>
+            <h1 className="register-h1">Register</h1>
             <input type="email" id="email" name="email" placeholder="Email" onChange={onChange} value={values.email}/>
             <input type="password" id="password" name="password" placeholder="Password" onChange={onChange} value={values.name}/>
             <input type="rePass" id="rePass" name="rePass" placeholder="Confirm password" onChange={onChange} value={values.rePass}/>

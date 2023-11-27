@@ -3,6 +3,16 @@
     src: url(/Fonts/Roboto-Regular.ttf);
 }
 
+@font-face {
+    font-family: Vecna;
+    src: url(/Fonts/Vecna-oppx.ttf);
+}
+
+.register-h1 {
+    font-family: Vecna;
+    font-size: 3em;
+}
+
 .register-cover {
     background-color: rgba(237, 214, 214, 0.5); 
     width: 30em;

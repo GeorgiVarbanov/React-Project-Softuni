@@ -22,7 +22,7 @@ const Login = () => {
 
     return (
         <form className="login-cover" onSubmit={onSubmit}>
-            <h1>Login</h1>
+            <h1 className="login-h1">Login</h1>
             <input type="email" id="email" name={LoginFormKeys.EMAIL} placeholder="Email" onChange={onChange} value={values[LoginFormKeys.EMAIL]} />
             <input type="password" id="password" name={LoginFormKeys.PASSWORD} placeholder="Password" onChange={onChange} value={values[LoginFormKeys.PASSWORD]} />
 
