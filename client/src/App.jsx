@@ -9,6 +9,7 @@ import About from "./components/About/About.jsx";
 import Scenarios from "./components/Scenarios/Scenarios.jsx";
 import CreateScenario from "./components/Scenarios/CreateScenario/CreateScenario.jsx";
 import Login from "./components/Users/Login/Login.jsx";
+import Logout from "./components/Users/Logout/Logout.jsx";
 import Register from "./components/Users/Register/Register.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
@@ -24,6 +25,7 @@ function App() {
     const result = await authService.login(values.email, values.password);
 
     setAuth(result);
+    localStorage.setItem("accessToken", result.accessToken);
     navigate(paths.home);
   };
 
@@ -31,33 +33,42 @@ function App() {
     const result = await authService.register(values.email, values.password);
 
     setAuth(result);
+    localStorage.setItem("accessToken", result.accessToken);
+    navigate(paths.home);
+  }
+
+  const logoutHandler = () => {
+    setAuth({});
+    localStorage.removeItem("accessToken");
     navigate(paths.home);
   }
 
   const values = {
     loginSubmitHandler,
     registerSubmitHandler,
+    logoutHandler,
     username: auth.username,
     email: auth.email,
     isAuthenticated: !!auth.accessToken,
   }
 
   return (
-    <AuthContext.Provider value={ values }>
-    <>
-      <Header />
+    <AuthContext.Provider value={values}>
+      <>
+        <Header />
 
-      <Routes>
-        <Route path={paths.home} element={<Home />} />
-        <Route path={paths.about} element={<About />} />
-        <Route path={paths.scenarios} element={<Scenarios />} />
-        <Route path={paths.create} element={<CreateScenario />} />
-        <Route path={paths.login} element={<Login />} />
-        <Route path={paths.register} element={<Register />} />
-      </Routes>
-      
-      <Footer/>
-    </>
+        <Routes>
+          <Route path={paths.home} element={<Home />} />
+          <Route path={paths.about} element={<About />} />
+          <Route path={paths.scenarios} element={<Scenarios />} />
+          <Route path={paths.create} element={<CreateScenario />} />
+          <Route path={paths.login} element={<Login />} />
+          <Route path={paths.register} element={<Register />} />
+          <Route path={paths.logout} element={<Logout />} />
+        </Routes>
+
+        <Footer />
+      </>
     </AuthContext.Provider>
   )
 }
