@@ -2,7 +2,7 @@ import { useContext } from "react";
 import "./CreateScenario.css"
 
 import useForm from "../../../hooks/useForm.js";
-import AuthContext from "../../../contexts/authContext.js";
+import AuthContext from "../../../contexts/authContext.jsx";
 
 const CreateFormKeys = {
     CAMPAIGN: "campaign",
@@ -28,7 +28,7 @@ const CreateScenario = () => {
                 type="campaign"
                 id="campaign"
                 name={CreateFormKeys.CAMPAIGN}
-                placeholder="Campaign"
+                placeholder="Name"
                 onChange={onChange}
                 value={values[CreateFormKeys.CAMPAIGN]}
             />
