@@ -29,6 +29,10 @@ function App() {
     navigate(paths.home);
   };
 
+  const createCampaignHandler = async (values) => {
+    console.log(values);
+  }
+
   const registerSubmitHandler = async (values) => {
     const result = await authService.register(values.email, values.password);
 
@@ -47,6 +51,7 @@ function App() {
     loginSubmitHandler,
     registerSubmitHandler,
     logoutHandler,
+    createCampaignHandler,
     username: auth.username,
     email: auth.email,
     isAuthenticated: !!auth.accessToken,
