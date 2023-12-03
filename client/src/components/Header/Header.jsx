@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import "./Header.css"
 
-import AuthContext from "../../contexts/authContext.js";
+import AuthContext from "../../contexts/authContext.jsx";
 
 const Header = () => {
     const {

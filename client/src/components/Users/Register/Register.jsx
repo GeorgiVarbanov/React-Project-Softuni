@@ -4,7 +4,7 @@ import { useContext } from "react";
 import "./Register.css"
 
 import useForm from "../../../hooks/useForm.js";
-import AuthContext from "../../../contexts/authContext.js";
+import AuthContext from "../../../contexts/authContext.jsx";
 
 const RegisterFormKeys = {
     USERNAME: "username",
