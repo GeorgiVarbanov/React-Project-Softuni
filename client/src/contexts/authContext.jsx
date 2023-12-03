@@ -38,12 +38,9 @@ export const AuthProvider = ({
     }
 
     const createCampaignHandler = async (values) => {
-
-        console.log(values);
-
         const result = await scenarioService.create(values);
-
-        console.log(result);
+        navigate(paths.scenarios);
+        return result;
     }
 
 
