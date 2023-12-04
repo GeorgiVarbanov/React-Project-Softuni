@@ -1,0 +1,52 @@
+.scenario-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000; /* Border properties */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    width: 80%; /* Set your desired width */
+    max-width: 1150px;
+    height: 70%; /* Set your desired height */
+    margin: 10% auto; /* Center horizontally with margin */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    box-sizing: border-box; /* Include padding and border in the total width/height */
+}
+  
+  .table {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .table-row {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .table-cell {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ba5858;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .table-cell-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .scenario-listing-item-avatar {
+    width: 200px; /* Set your desired width */
+    height: 200px; /* Set your desired height */
+    background-color: #ddd; /* Placeholder color for the avatar */
+  }
+  
+  .sources-listing-item-title {
+    font-weight: bold;
+  }
+  
