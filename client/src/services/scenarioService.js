@@ -14,3 +14,8 @@ export const getAll = async () => {
 
     return result;
 }
+
+export const getById = async (scenarioId) => {
+    const result = await requests.get(`${baseUrl}/${scenarioId}`);
+    return result;
+}
