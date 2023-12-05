@@ -1,0 +1,57 @@
+.details-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #000;
+    backdrop-filter: blur(10px);
+    width: 80%;
+    max-width: 1300px;
+    height: 70%;
+    margin: 10% auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .scenario-details-item-avatar {
+    width: 500px; /* Adjust as needed */
+    height: 500px;; /* Adjust as needed */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .scenario-details-info {
+    margin-left: 20px; /* Adjust as needed */
+  }
+  
+  .scenario-details-item-title {
+    font-size: 1.5em; /* Adjust as needed */
+  }
+  
+  .scenario-details-item-levels {
+    font-size: 1em; /* Adjust as needed */
+    margin-top: 5px; /* Adjust as needed */
+  }
+  
+  .scenario-details-item-description {
+    margin-top: 10px; /* Adjust as needed */
+    border: 1px solid #ccc; /* Add border as needed */
+    padding: 10px; /* Adjust as needed */
+  }
+  
+  .scenario-details-item-keyElements {
+    margin-top: 10px; /* Adjust as needed */
+    border: 1px solid #ccc; /* Add border as needed */
+    padding: 10px; /* Adjust as needed */
+  }
+  
+  .scenario-details-item-links {
+    margin-top: 10px; /* Adjust as needed */
+  }
+  
+  /* Additional styling for links if needed */
+  .linkStyle {
+    margin-right: 10px;
+  }
