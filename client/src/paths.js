@@ -6,6 +6,7 @@ const paths = {
     login: "users/login",
     register: "users/register",
     logout: "/users/logout",
+    scenarioId: "/scenarios/:scenarioId",
 }
 
 export default paths;

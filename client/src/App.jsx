@@ -8,6 +8,7 @@ import Home from "./components/Home/Home.jsx";
 import About from "./components/About/About.jsx";
 import Scenarios from "./components/Scenarios/Scenarios.jsx";
 import CreateScenario from "./components/Scenarios/CreateScenario/CreateScenario.jsx";
+import ScenarioDetails from "./components/Scenarios/ScenarioDetails/ScenarioDetails.jsx";
 import Login from "./components/Users/Login/Login.jsx";
 import Logout from "./components/Users/Logout/Logout.jsx";
 import Register from "./components/Users/Register/Register.jsx";
@@ -24,6 +25,7 @@ function App() {
           <Route path={paths.home} element={<Home />} />
           <Route path={paths.about} element={<About />} />
           <Route path={paths.scenarios} element={<Scenarios />} />
+          <Route path={paths.scenarioId} element={<ScenarioDetails />} />
           <Route path={paths.create} element={<CreateScenario />} />
           <Route path={paths.login} element={<Login />} />
           <Route path={paths.register} element={<Register />} />
