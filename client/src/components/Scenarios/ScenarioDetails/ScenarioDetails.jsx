@@ -1,27 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./ScenarioDetails.css";
+import { useEffect, useState } from "react";
 
-const ScenarioDetails = ({
-    _id,
-    campaign,
-    level,
-    description,
-    keyElements,
-}) => {
+import * as scenarioService from "../../../services/scenarioService.js";
+
+const ScenarioDetails = () => {
+
+    const [scenario, setScenario] = useState({});
+    const { scenarioId } = useParams();
+
+    useEffect(() => {
+        scenarioService.getById(scenarioId).then(setScenario);
+    }, [scenarioId])
+
 
     const avatarStyle = {
-        backgroundImage: `url(${imageUrl})`, // Set the background image dynamically
+        backgroundImage: `url(${scenario.imageUrl})`, // Set the background image dynamically
     };
 
     return (
         <section className="details-section">
             <div className="scenario-details-item-avatar" style={avatarStyle}></div>
-            <div className="scenario-details-item-title">{campaign}</div>
-            <div className="scenario-details-item-levels">{level}</div>
-            <p className="scenario-details-item-description">{description}</p>
-            <p className="scenario-details-item-keyElements">{keyElements}</p>
-            <Link to={`/scenarios/${_id}/edit`}>Edit</Link>
-            <Link to={`/scenarios/${_id}/delete`}>Delete</Link>
+            <div className="scenario-details-item-title">{scenario.campaign}</div>
+            <div className="scenario-details-item-levels">{scenario.level}</div>
+            <p className="scenario-details-item-description">{scenario.description}</p>
+            <p className="scenario-details-item-keyElements">{scenario.keyElements}</p>
+            <Link to={`/scenarios/${scenario._id}/edit`}>Edit</Link>
+            <Link to={`/scenarios/${scenario._id}/delete`}>Delete</Link>
         </section>
     );
 }
