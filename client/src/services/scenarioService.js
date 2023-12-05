@@ -8,3 +8,9 @@ export const create = async (gameData) => {
 
     return result;
 }
+
+export const getAll = async () => {
+    const result = await requests.get(baseUrl);
+
+    return result;
+}
