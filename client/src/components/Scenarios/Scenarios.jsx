@@ -16,6 +16,7 @@ const Scenarios = () => {
                 console.log(err);
             })
     }, [])
+    
     return (
         <section className="scenario-section">
             {scenarios.map(scenario => (
