@@ -9,6 +9,7 @@ const CreateFormKeys = {
     LEVEL: "level",
     IMGURL: "imageUrl",
     DESCRIPTION: "description",
+    KEYELEMENTS: "keyElements",
 }
 
 
@@ -19,6 +20,7 @@ const CreateScenario = () => {
         [CreateFormKeys.LEVEL]: "",
         [CreateFormKeys.IMGURL]: "",
         [CreateFormKeys.DESCRIPTION]: "",
+        [CreateFormKeys.KEYELEMENTS]: "",
     });
 
     return (
@@ -49,12 +51,21 @@ const CreateScenario = () => {
                 value={values[CreateFormKeys.IMGURL]}
             />
             <textarea
-                type="rePass"
-                id="rePass"
+                type="description"
+                id="description"
                 name={CreateFormKeys.DESCRIPTION}
                 placeholder="Description"
                 onChange={onChange}
                 value={values[CreateFormKeys.DESCRIPTION]}
+            />
+            <textarea
+                className="keyElemetns"
+                type="keyElemetns"
+                id="keyElemetns"
+                name={CreateFormKeys.KEYELEMENTS}
+                placeholder="Key elements"
+                onChange={onChange}
+                value={values[CreateFormKeys.KEYELEMENTS]}
             />
 
             <button className="create-btn" type="submit">Create</button>
