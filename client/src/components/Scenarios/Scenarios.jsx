@@ -1,65 +1,30 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+
 import "./Scenarios.css";
+import * as scenarioService from "../../services/scenarioService.js";
+import ScenarioItem from "./ScenarioItem/ScenarioItem.jsx";
+
 
 const Scenarios = () => {
+
+    const [scenarios, setScenarios] = useState([]);
+
+    useEffect(() => {
+        scenarioService.getAll()
+            .then(result => setScenarios(result))
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
     return (
         <section className="scenario-section">
-            <div className="table-row">
-                <Link className="table-cell">
-                    <div className="table-cell-content">
-                        <div className="scenario-listing-item-avatar"></div>
-                        <div className="sources-listing-item-title">Title</div>
-                    </div>
-                </Link>
-            </div>
-            <div className="table-row">
-                <Link className="table-cell">
-                    <div className="table-cell-content">
-                        <div className="scenario-listing-item-avatar"></div>
-                        <div className="sources-listing-item-title">Title</div>
-                    </div>
-                </Link>
-            </div>
-            <div className="table-row">
-                <Link className="table-cell">
-                    <div className="table-cell-content">
-                        <div className="scenario-listing-item-avatar"></div>
-                        <div className="sources-listing-item-title">Title</div>
-                    </div>
-                </Link>
-            </div>
-            <div className="table-row">
-                <Link className="table-cell">
-                    <div className="table-cell-content">
-                        <div className="scenario-listing-item-avatar"></div>
-                        <div className="sources-listing-item-title">Title</div>
-                    </div>
-                </Link>
-            </div>
-            <div className="table-row">
-                <Link className="table-cell">
-                    <div className="table-cell-content">
-                        <div className="scenario-listing-item-avatar"></div>
-                        <div className="sources-listing-item-title">Title</div>
-                    </div>
-                </Link>
-            </div>
-            <div className="table-row">
-                <Link className="table-cell">
-                    <div className="table-cell-content">
-                        <div className="scenario-listing-item-avatar"></div>
-                        <div className="sources-listing-item-title">Title</div>
-                    </div>
-                </Link>
-            </div>
-            <div className="table-row">
-                <Link className="table-cell">
-                    <div className="table-cell-content">
-                        <div className="scenario-listing-item-avatar"></div>
-                        <div className="sources-listing-item-title">Title</div>
-                    </div>
-                </Link>
-            </div>
+            {scenarios.map(scenario => (
+                <ScenarioItem key={scenario._id} {...scenario} />
+            ))}
+
+            {scenarios.length === 0 && (
+                <h3 className="no-articles">No articles yet</h3>
+            )}
         </section>
     )
 }
