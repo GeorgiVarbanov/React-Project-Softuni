@@ -21,3 +21,9 @@ export const getById = async (scenarioId) => {
 }
 
 export const remove = async (scenarioId) => requests.remove(`${baseUrl}/${scenarioId}`);
+
+export const edit = async (scenarioId, scenarioData) => {
+    const result = await requests.put(`${baseUrl}/${scenarioId}`, scenarioData);
+
+    return result;
+}
