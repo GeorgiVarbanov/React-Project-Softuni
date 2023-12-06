@@ -65,7 +65,7 @@
 }
 
 .scenario-details-buttons {
-  padding-top: 35%; /* Pushes "Edit" and "Delete" buttons to the bottom */
+  margin-top: 30%; /* Pushes "Edit" and "Delete" buttons to the bottom */
   display: flex;
   padding-right: 2%; /* Ensures the buttons are in a row */
   justify-content: space-between; /* Adds space between the buttons */
