@@ -19,3 +19,5 @@ export const getById = async (scenarioId) => {
     const result = await requests.get(`${baseUrl}/${scenarioId}`);
     return result;
 }
+
+export const remove = async (scenarioId) => requests.remove(`${baseUrl}/${scenarioId}`);
