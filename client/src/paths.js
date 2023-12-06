@@ -3,10 +3,11 @@ const paths = {
     about: "/about",
     scenarios: "/scenarios",
     create: "/scenarios/create",
+    edit: "/scenarios/:scenarioId/edit",
     login: "users/login",
     register: "users/register",
     logout: "/users/logout",
-    scenarioId: "/scenarios/:scenarioId",
+    details: "/scenarios/:scenarioId",
 }
 
 export default paths;
