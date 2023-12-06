@@ -1,11 +1,13 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import "./ScenarioDetails.css";
 import * as scenarioService from "../../../services/scenarioService.js";
+import AuthContext from "../../../contexts/authContext.jsx";
 
 const ScenarioDetails = () => {
     const navigate = useNavigate();
+    const { userId } = useContext(AuthContext);
     const [scenario, setScenario] = useState({});
     const { scenarioId } = useParams();
 
@@ -37,10 +39,13 @@ const ScenarioDetails = () => {
                 <div className="scenario-details-item-levels">{scenario.level}</div>
                 <div className="scenario-detauls-description-header">Description: </div>
                 <p className="scenario-details-item-description">{scenario.description}</p>
-                <div className="scenario-details-buttons">
-                    <Link className="edit-btn" to={`/scenarios/${scenario._id}/edit`}>Edit</Link>
-                    <button className="delete-btn" onClick={deleteButtonClickHandler}>Delete</button>
-                </div>
+
+                {userId === scenario._ownerId && (
+                    <div className="scenario-details-buttons">
+                        <Link className="edit-btn" to={`/scenarios/${scenario._id}/edit`}>Edit</Link>
+                        <button className="delete-btn" onClick={deleteButtonClickHandler}>Delete</button>
+                    </div>
+                )}
             </div>
         </section>
     );
