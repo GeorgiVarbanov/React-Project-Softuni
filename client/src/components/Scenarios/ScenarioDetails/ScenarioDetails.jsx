@@ -30,6 +30,9 @@ const ScenarioDetails = () => {
         }
     }
 
+    console.log(userId)
+    console.log(scenario._ownerId);
+
     return (
         <section className="details-section">
             <div className="scenario-details-item-avatar" style={avatarStyle}></div>
