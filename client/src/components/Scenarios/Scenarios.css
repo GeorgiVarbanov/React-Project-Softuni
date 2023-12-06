@@ -13,3 +13,9 @@
   box-sizing: border-box;
   position: relative;
 }
+
+.no-articles {
+  font-size: 50px;
+  color: #ffffff;
+  font-family: RobotoRegular;
+}
