@@ -33,11 +33,11 @@ const Header = () => {
 
                     {!isAuthenticated && (
                         <>
-                        <li className="nav-bar-li"><Link to="/users/login" className="link">Login</Link></li>
-                        <li className="nav-bar-li"><Link to="/users/register" className="link">Register</Link></li>
+                            <li className="nav-bar-li"><Link to="/users/login" className="link">Login</Link></li>
+                            <li className="nav-bar-li"><Link to="/users/register" className="link">Register</Link></li>
                         </>
                     )}
-                    
+
                 </ul>
                 <div className="toggle-btn" onClick={toggleDropDownHandler}>
                     <i className="fa-solid fa-bars"></i>
@@ -48,9 +48,18 @@ const Header = () => {
                 <li className="nav-bar-li"><Link to="/" className="link">Home</Link></li>
                 <li className="nav-bar-li"><Link to="/about" className="link">About</Link></li>
                 <li className="nav-bar-li"><Link to="/scenarios" className="link">Scenarious</Link></li>
-                <li className="nav-bar-li"><Link to="/users/login" className="link">Login</Link></li>
-                <li className="nav-bar-li"><Link to="/users/register" className="link">Register</Link></li>
-                <li className="nav-bar-li"><Link to="/users/logout" className="link">Logout</Link></li>
+                {isAuthenticated && (
+                    <>
+                        <li className="nav-bar-li"><Link to="/scenarios/create" className="link">Create Scenario</Link></li>
+                        <li className="nav-bar-li"><Link to="/users/logout" className="link">Logout</Link></li>
+                    </>
+                )}
+                {!isAuthenticated && (
+                    <>
+                        <li className="nav-bar-li"><Link to="/users/login" className="link">Login</Link></li>
+                        <li className="nav-bar-li"><Link to="/users/register" className="link">Register</Link></li>
+                    </>
+                )}
             </div>
         </header>
     )
