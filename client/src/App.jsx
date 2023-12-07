@@ -14,6 +14,7 @@ import Logout from "./components/Users/Logout/Logout.jsx";
 import Register from "./components/Users/Register/Register.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import EditScenario from "./components/Scenarios/EditScenario/EditScenario.jsx";
+import AuthGuard from './components/guards/AuthGuard';
 
 function App() {
 
@@ -27,11 +28,14 @@ function App() {
           <Route path={paths.about} element={<About />} />
           <Route path={paths.scenarios} element={<Scenarios />} />
           <Route path={paths.details} element={<ScenarioDetails />} />
-          <Route path={paths.create} element={<CreateScenario />} />
-          <Route path={paths.edit} element={<EditScenario />} />
           <Route path={paths.login} element={<Login />} />
           <Route path={paths.register} element={<Register />} />
-          <Route path={paths.logout} element={<Logout />} />
+
+          <Route element={<AuthGuard />}>
+            <Route path={paths.create} element={<CreateScenario />} />
+            <Route path={paths.logout} element={<Logout />} />
+            <Route path={paths.edit} element={<EditScenario />} />
+          </Route>
         </Routes>
 
         <Footer />
