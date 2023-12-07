@@ -27,6 +27,7 @@ const Header = () => {
                     {isAuthenticated && (
                         <>
                             <li className="nav-bar-li"><Link to="/scenarios/create" className="link">Create Scenario</Link></li>
+                            <li className="nav-bar-li"><Link to="/users/profile" className="link">Profile</Link></li>
                             <li className="nav-bar-li"><Link to="/users/logout" className="link">Logout</Link></li>
                         </>
                     )}
@@ -51,6 +52,7 @@ const Header = () => {
                 {isAuthenticated && (
                     <>
                         <li className="nav-bar-li"><Link to="/scenarios/create" className="link">Create Scenario</Link></li>
+                        <li className="nav-bar-li"><Link to="/users/profile" className="link">Profile</Link></li>
                         <li className="nav-bar-li"><Link to="/users/logout" className="link">Logout</Link></li>
                     </>
                 )}
