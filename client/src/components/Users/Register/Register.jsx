@@ -27,8 +27,8 @@ const Register = () => {
         <form className="register-cover" onSubmit={onSubmit}>
             <h1 className="register-h1">Register</h1>
             <input
-                type="email"
-                id="email"
+                type="username"
+                id="username"
                 name={RegisterFormKeys.USERNAME}
                 placeholder="Username"
                 onChange={onChange}
