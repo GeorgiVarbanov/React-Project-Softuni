@@ -5,7 +5,7 @@ import "./CommentSection.css";
 import * as commentService from "../../../../services/commentService.js"
 
 const CommentSection = () => {
-    const [comments, setComments] = useState();
+    const [comments, setComments] = useState([]);
     const { scenarioId } = useParams();
 
     useEffect(() => {
@@ -21,8 +21,11 @@ const CommentSection = () => {
             <div className="comment-header">Comments:</div>
             <div className="comments">
                 <ul>
-                    <li>Hello there</li>
-                    <li>Hello there</li>
+                    {comments.map(({ _id, text: {comment}, owner: {email} }) => (
+                        <li key={_id}>
+                                {email}: {comment}
+                        </li>
+                    ))}
                 </ul>
             </div>
         </section>
