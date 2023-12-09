@@ -28,7 +28,7 @@ const Register = () => {
     return (
         <form className="register-cover" onSubmit={onSubmit}>
             <h1 className="register-h1">Register</h1>
-            <input
+            <input className="register-input"
                 type="username"
                 id="username"
                 name={RegisterFormKeys.USERNAME}
@@ -37,7 +37,7 @@ const Register = () => {
                 value={values[RegisterFormKeys.USERNAME]}
             />
             {errors.username && <span>{errors.username}</span>}
-            <input
+            <input  className="register-input"
                 type="profilePicture"
                 id="profilePicture"
                 name={RegisterFormKeys.PROFILEPICTURE}
@@ -46,7 +46,7 @@ const Register = () => {
                 value={values[RegisterFormKeys.PROFILEPICTURE]}
             />
             {errors.profilePicture && <span>{errors.profilePicture}</span>}
-            <input
+            <input  className="register-input"
                 type="email"
                 id="email"
                 name={RegisterFormKeys.EMAIL}
@@ -55,7 +55,7 @@ const Register = () => {
                 value={values[RegisterFormKeys.EMAIL]}
             />
             {errors.email && <span>{errors.email}</span>}
-            <input
+            <input  className="register-input"
                 type="password"
                 id="password"
                 name={RegisterFormKeys.PASSWORD}
@@ -64,7 +64,7 @@ const Register = () => {
                 value={values[RegisterFormKeys.PASSWORD]}
             />
             {errors.password && <span>{errors.password}</span>}
-            <input
+            <input  className="register-input"
                 type="rePass"
                 id="rePass"
                 name={RegisterFormKeys.REPASS}
