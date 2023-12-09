@@ -8,7 +8,6 @@
     box-shadow: 0 1px 20px 0 rgb(69, 90, 100, 0.08);
     backdrop-filter: blur(10px);
     box-sizing: border-box;
-
 }
 
 .profile-wrapper .left {
@@ -46,7 +45,7 @@
     margin-bottom: 25px;
 }
 
-.profile-wrapper .right .created-scenarios h3 {
+.profile-wrapper .right .created-scenarios .h3-title {
     margin-bottom: 15px;
     padding-bottom: 5px;
     border-bottom: 1px solid #e0e0e0;
@@ -56,6 +55,25 @@
     font-family: RobotoRegular;
 }
 
-.profile-wrapper .right .created-scenarios .created-scenarios{
+.profile-wrapper .right .created-scenarios .scenarios-data {
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
 }
+
+
+.profile-wrapper .right .created-scenarios .scenarios-data > * {
+    flex: 0 0 calc(33.33% - 10px); 
+    margin-bottom: 10px; 
+}
+
+
+.profile-wrapper .right .created-scenarios .scenarios-data > *:nth-child(3n) {
+    margin-right: 0;
+}
+
+.no-articles-profile{
+    color: white;
+}
+
