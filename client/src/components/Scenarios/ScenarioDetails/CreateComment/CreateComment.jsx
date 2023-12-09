@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./CreateComment.css";
 
 import * as commentService from "../../../../services/commentService.js"
+import AuthContext from "../../../../contexts/authContext.jsx";
 
 const CreateComment = () => {
     const [comment, setComment] = useState("");
     const [error, setError] = useState("");
+    const { email } = useContext(AuthContext);
     const { scenarioId } = useParams();
 
     const createCommentHandler = async (e) => {
@@ -19,6 +21,9 @@ const CreateComment = () => {
 
         try {
             const newComment = await commentService.create(scenarioId, comment);
+            newComment.owner = { email }
+
+            console.log(newComment)
             return newComment;
         } catch (error) {
             alert(error);
@@ -26,10 +31,7 @@ const CreateComment = () => {
     }
 
     const onChange = (e) => {
-        setComment(state => ({
-            ...state,
-            [e.target.name]: e.target.value,
-        }));
+        setComment(e.target.value);
     };
 
     return (
@@ -43,7 +45,7 @@ const CreateComment = () => {
                     onChange={onChange}
                     value={comment.comment}
                 />
-                
+
                 <button className="comment-btn">Add comment</button>
             </form>
             {error && <span className="error-message">{error}</span>}
