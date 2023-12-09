@@ -15,19 +15,30 @@ export const AuthProvider = ({
     const [auth, setAuth] = usePersistedState("auth", {});
 
     const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email, values.password);
 
-        setAuth(result);
-        localStorage.setItem("accessToken", result.accessToken);
-        navigate(paths.home);
+        try {
+            const result = await authService.login(values.email, values.password);
+
+            setAuth(result);
+            localStorage.setItem("accessToken", result.accessToken);
+            navigate(paths.home);
+        } catch (error) {
+            alert(error.message)
+        }
+
     };
 
     const registerSubmitHandler = async (values) => {
-        const result = await authService.register(values.email, values.password);
 
-        setAuth(result);
-        localStorage.setItem("accessToken", result.accessToken);
-        navigate(paths.home);
+        try {
+            const result = await authService.register(values.email, values.password);
+
+            setAuth(result);
+            localStorage.setItem("accessToken", result.accessToken);
+            navigate(paths.home);
+        } catch (error) {
+            alert(error.message);
+        }
     }
 
     const logoutHandler = () => {
@@ -38,9 +49,15 @@ export const AuthProvider = ({
     }
 
     const createCampaignHandler = async (values) => {
-        const result = await scenarioService.create(values);
-        navigate(paths.scenarios);
-        return result;
+
+        try {
+            const result = await scenarioService.create(values);
+
+            navigate(paths.scenarios);
+            return result;
+        } catch (error) {
+            alert(error)
+        }
     }
 
 
