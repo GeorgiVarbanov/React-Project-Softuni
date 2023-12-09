@@ -9,7 +9,7 @@ import CommentSection from "./CommentSection/CommentSection.jsx";
 
 const ScenarioDetails = () => {
     const navigate = useNavigate();
-    const { userId } = useContext(AuthContext);
+    const { userId , isAuthenticated } = useContext(AuthContext);
     const [scenario, setScenario] = useState({});
     const { scenarioId } = useParams();
 
@@ -19,7 +19,7 @@ const ScenarioDetails = () => {
 
 
     const avatarStyle = {
-        backgroundImage: `url(${scenario.imageUrl})`, // Set the background image dynamically
+        backgroundImage: `url(${scenario.imageUrl})`, 
     };
 
     const deleteButtonClickHandler = async () => {
@@ -53,7 +53,7 @@ const ScenarioDetails = () => {
             </section>
 
             <CommentSection />
-            <CreateComment />
+            {isAuthenticated && (<CreateComment />)}
         </>
     );
 }
