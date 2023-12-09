@@ -5,7 +5,7 @@ import useForm from "../../../hooks/useForm.js";
 import AuthContext from "../../../contexts/authContext.jsx";
 
 const CreateFormKeys = {
-    CAMPAIGN: "campaign",
+    SCENARIO: "scenario",
     LEVEL: "level",
     IMGURL: "imageUrl",
     DESCRIPTION: "description",
@@ -14,8 +14,8 @@ const CreateFormKeys = {
 
 const CreateScenario = () => {
     const { createCampaignHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(createCampaignHandler, {
-        [CreateFormKeys.CAMPAIGN]: "",
+    const { values, onChange, onSubmit, errors } = useForm(createCampaignHandler, {
+        [CreateFormKeys.SCENARIO]: "",
         [CreateFormKeys.LEVEL]: "",
         [CreateFormKeys.IMGURL]: "",
         [CreateFormKeys.DESCRIPTION]: "",
@@ -23,15 +23,16 @@ const CreateScenario = () => {
 
     return (
         <form className="campaign-cover" onSubmit={onSubmit}>
-            <h1 className="campaign-h1">Create Campaign</h1>
+            <h1 className="campaign-h1">Create Scenario</h1>
             <input
                 type="campaign"
                 id="campaign"
-                name={CreateFormKeys.CAMPAIGN}
-                placeholder="Name"
+                name={CreateFormKeys.SCENARIO}
+                placeholder="Scenario"
                 onChange={onChange}
-                value={values[CreateFormKeys.CAMPAIGN]}
+                value={values[CreateFormKeys.SCENARIO]}
             />
+            {errors.scenario && <span>{errors.scenario}</span>}
             <input
                 type="level"
                 id="level"
@@ -40,14 +41,16 @@ const CreateScenario = () => {
                 onChange={onChange}
                 value={values[CreateFormKeys.LEVEL]}
             />
+            {errors.level && <span>{errors.level}</span>}
             <input
                 type="img"
                 id="img"
                 name={CreateFormKeys.IMGURL}
-                placeholder="Image"
+                placeholder="Image URL"
                 onChange={onChange}
                 value={values[CreateFormKeys.IMGURL]}
             />
+            {errors.imageUrl && <span>{errors.imageUrl}</span>}
             <textarea
                 type="description"
                 id="description"
@@ -56,7 +59,7 @@ const CreateScenario = () => {
                 onChange={onChange}
                 value={values[CreateFormKeys.DESCRIPTION]}
             />
-            
+            {errors.description && <span>{errors.description}</span>}
             <button className="create-btn" type="submit">Create</button>
 
         </form>

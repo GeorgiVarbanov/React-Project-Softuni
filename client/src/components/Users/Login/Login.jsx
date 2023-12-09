@@ -15,7 +15,7 @@ const Login = () => {
 
     const { loginSubmitHandler } = useContext(AuthContext);
 
-    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    const { values, onChange, onSubmit , errors} = useForm(loginSubmitHandler, {
         [LoginFormKeys.EMAIL]: '',
         [LoginFormKeys.PASSWORD]: '',
     });
@@ -24,10 +24,11 @@ const Login = () => {
         <form className="login-cover" onSubmit={onSubmit}>
             <h1 className="login-h1">Login</h1>
             <input type="email" id="email" name={LoginFormKeys.EMAIL} placeholder="Email" onChange={onChange} value={values[LoginFormKeys.EMAIL]} />
+            {errors.email && <span>{errors.email}</span>}
             <input type="password" id="password" name={LoginFormKeys.PASSWORD} placeholder="Password" onChange={onChange} value={values[LoginFormKeys.PASSWORD]} />
-
+            {errors.password && <span>{errors.password}</span>}
+            
             <button className="login-btn">Login</button>
-
             <Link className="text" to="/users/register">Don't have an account?</Link>
         </form>
     )

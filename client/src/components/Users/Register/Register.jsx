@@ -16,7 +16,7 @@ const RegisterFormKeys = {
 
 const Register = () => {
     const { registerSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    const { values, onChange, onSubmit , errors} = useForm(registerSubmitHandler, {
         [RegisterFormKeys.USERNAME]: "",
         [RegisterFormKeys.EMAIL]: "",
         [RegisterFormKeys.PASSWORD]: "",
@@ -34,6 +34,7 @@ const Register = () => {
                 onChange={onChange}
                 value={values[RegisterFormKeys.USERNAME]}
             />
+            {errors.username && <span>{errors.username}</span>}
             <input
                 type="email"
                 id="email"
@@ -42,6 +43,7 @@ const Register = () => {
                 onChange={onChange}
                 value={values[RegisterFormKeys.EMAIL]}
             />
+            {errors.email && <span>{errors.email}</span>}
             <input
                 type="password"
                 id="password"
@@ -50,6 +52,7 @@ const Register = () => {
                 onChange={onChange}
                 value={values[RegisterFormKeys.PASSWORD]}
             />
+            {errors.password && <span>{errors.password}</span>}
             <input
                 type="rePass"
                 id="rePass"
@@ -58,6 +61,7 @@ const Register = () => {
                 onChange={onChange}
                 value={values[RegisterFormKeys.REPASS]}
             />
+            {errors.rePass && <span>{errors.rePass}</span>}
 
             <button className="register-btn" type="submit">Register</button>
 
