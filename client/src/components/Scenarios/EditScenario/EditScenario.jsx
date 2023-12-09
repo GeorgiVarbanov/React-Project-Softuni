@@ -9,7 +9,7 @@ const EditScenario = () => {
     const navigate = useNavigate();
     const {scenarioId} = useParams();
     const [scenario, setScenario] = useState({
-        campaign: '',
+        scenario: '',
         level: "",
         imageUrl: "",
         description: "",
@@ -47,12 +47,12 @@ const EditScenario = () => {
         <form className="campaign-cover" onSubmit={editGameSubmitHandler}>
             <h1 className="campaign-h1">Edit Scenario</h1>
             <input
-                type="campaign"
-                id="campaign"
-                name="campaign"
+                type="scenario"
+                id="scenario"
+                name="scenario"
                 placeholder="Name"
                 onChange={onChange}
-                value={scenario.campaign}
+                value={scenario.scenario}
             />
             <input
                 type="level"
