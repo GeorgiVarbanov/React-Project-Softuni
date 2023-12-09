@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import "./ScenarioDetails.css";
 import * as scenarioService from "../../../services/scenarioService.js";
 import AuthContext from "../../../contexts/authContext.jsx";
+import CreateComment from "./CreateComment/CreateComment.jsx";
 
 const ScenarioDetails = () => {
     const navigate = useNavigate();
@@ -59,17 +60,7 @@ const ScenarioDetails = () => {
                     </ul>
                 </div>
             </section>
-            <section className="add-comment">
-                <form className="comment-form">
-                    <textarea className="comment-input"
-                        type="comment"
-                        id="comment"
-                        name="comment"
-                        placeholder="Comment"
-                    />
-                    <button className="comment-btn">Add comment</button>
-                </form>
-            </section>
+            <CreateComment />
         </>
     );
 }

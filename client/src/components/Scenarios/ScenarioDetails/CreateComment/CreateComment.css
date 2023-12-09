@@ -1,0 +1,43 @@
+.add-comment {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 1300px;
+    margin: 2% auto;
+    box-sizing: border-box;
+    position: relative;
+    backdrop-filter: blur(10px);
+  }
+  
+  .comment-form {
+    width: 100%;
+    display: flex;
+  }
+  
+  .comment-input {
+    background-color: rgb(212, 212, 212);
+    border-radius: 0.25em;
+    resize: none;
+    width: 80%;
+    height: 40px;
+    box-sizing: border-box;
+  }
+  
+  .comment-btn {
+    width: 20%;
+    height: 40px;
+    border: none; 
+    border-radius: 0.25em;
+    background-color: #ff5303;
+    color: #fff;
+    cursor: pointer;
+    font-family: RobotoRegular;
+  }
+
+  .error-message {
+    color: rgb(255, 217, 0);
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
