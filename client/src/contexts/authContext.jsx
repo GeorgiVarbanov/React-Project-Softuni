@@ -31,7 +31,7 @@ export const AuthProvider = ({
     const registerSubmitHandler = async (values) => {
 
         try {
-            const result = await authService.register(values.email, values.password);
+            const result = await authService.register(values.email, values.password, values.username, values.profilePicture);
 
             setAuth(result);
             localStorage.setItem("accessToken", result.accessToken);
@@ -70,6 +70,7 @@ export const AuthProvider = ({
         userId: auth._id,
         username: auth.username,
         email: auth.email,
+        profilePicture: auth.profilePicture,
         isAuthenticated: !!auth.accessToken,
     }
 
