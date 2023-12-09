@@ -6,6 +6,7 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Center the row */
 }
 
 ul {
@@ -22,6 +23,9 @@ ul {
     width: 25%;
     padding-left: 0 15px;
     justify-content: space-between;
+    text-align: center; /* Center the text in each column */
+    margin-right: 125px;
+    margin-left: 125px;
 }
 
 .footer-col h4 {
@@ -41,7 +45,7 @@ ul {
     background-color: #e91e63;
     height: 2px;
     box-sizing: border-box;
-    width: 50px;
+    width: 100%;
 }
 
 .footer-col ul li:not(:last-child) {
@@ -83,14 +87,14 @@ ul {
 }
 
 /*responsive*/
-@media(max-width: 767px) {
+@media (max-width: 767px) {
     .footer-col {
         width: 50%;
         margin-bottom: 30px;
     }
 }
 
-@media(max-width: 574px) {
+@media (max-width: 574px) {
     .footer-col {
         width: 100%;
     }
