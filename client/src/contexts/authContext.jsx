@@ -58,7 +58,7 @@ export const AuthProvider = ({
             navigate(paths.scenarios);
             return result;
         } catch (error) {
-            alert(error)
+            alert(error);
         }
     }
 

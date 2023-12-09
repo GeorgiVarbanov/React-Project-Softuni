@@ -13,7 +13,7 @@ const Scenarios = () => {
         scenarioService.getAll()
             .then(result => setScenarios(result))
             .catch(err => {
-                alert(err.message);
+                console.log(err);
             })
     }, [])
     
