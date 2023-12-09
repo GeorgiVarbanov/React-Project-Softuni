@@ -1,0 +1,23 @@
+.scenario-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  backdrop-filter: blur(10px);
+  width: 80%;
+  max-width: 1300px;
+  height: 70%;
+  margin: 10% auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/*See how to fix backdrop filter blur for dropdown*/
+
+.no-articles {
+  font-size: 50px;
+  color: #ffffff;
+  font-family: RobotoRegular;
+}
