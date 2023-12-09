@@ -30,7 +30,7 @@
     backdrop-filter: blur(5px);
 }
 
-input {
+.login-cover input {
     border: none;
     background-color: rgb(212, 212, 212);
     height: 4em;

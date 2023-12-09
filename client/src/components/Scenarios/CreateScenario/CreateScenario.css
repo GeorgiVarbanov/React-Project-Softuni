@@ -30,7 +30,7 @@
     backdrop-filter: blur(5px);
 }
 
-input {
+.campaign-cover input {
     border: none;
     background-color: rgb(212, 212, 212);
     height: 4em;
@@ -39,7 +39,7 @@ input {
     text-align: center;
 }
 
-textarea {
+.campaign-cover textarea {
     background-color: rgb(212, 212, 212);
     border-radius: 0.25em;
     resize: none;
