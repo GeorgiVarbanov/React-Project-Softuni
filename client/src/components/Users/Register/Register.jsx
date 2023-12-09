@@ -22,6 +22,7 @@ const Register = () => {
         [RegisterFormKeys.EMAIL]: "",
         [RegisterFormKeys.PASSWORD]: "",
         [RegisterFormKeys.REPASS]: "",
+        [RegisterFormKeys.PROFILEPICTURE]: "",
     });
 
     return (
@@ -44,7 +45,7 @@ const Register = () => {
                 onChange={onChange}
                 value={values[RegisterFormKeys.PROFILEPICTURE]}
             />
-            {errors.username && <span>{errors.username}</span>}
+            {errors.profilePicture && <span>{errors.profilePicture}</span>}
             <input
                 type="email"
                 id="email"

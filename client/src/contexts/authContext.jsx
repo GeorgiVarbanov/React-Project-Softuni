@@ -33,7 +33,9 @@ export const AuthProvider = ({
         try {
             const result = await authService.register(values.email, values.password, values.username, values.profilePicture);
 
-            setAuth(result);
+            const { password, ...authData } = result;
+
+            setAuth(authData);
             localStorage.setItem("accessToken", result.accessToken);
             navigate(paths.home);
         } catch (error) {
