@@ -8,7 +8,7 @@ import AuthContext from "../../../../contexts/authContext.jsx";
 const CreateComment = () => {
     const [comment, setComment] = useState("");
     const [error, setError] = useState("");
-    const { email } = useContext(AuthContext);
+    const { username } = useContext(AuthContext);
     const { scenarioId } = useParams();
 
     const createCommentHandler = async (e) => {
@@ -21,9 +21,8 @@ const CreateComment = () => {
 
         try {
             const newComment = await commentService.create(scenarioId, comment);
-            newComment.owner = { email }
-
-            console.log(newComment)
+            newComment.owner = { username }
+            
             return newComment;
         } catch (error) {
             alert(error);
