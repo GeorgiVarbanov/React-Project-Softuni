@@ -5,7 +5,7 @@ import "./CreateComment.css";
 import * as commentService from "../../../../services/commentService.js"
 import AuthContext from "../../../../contexts/authContext.jsx";
 
-const CreateComment = () => {
+const CreateComment = (props) => {
     const [comment, setComment] = useState("");
     const [error, setError] = useState("");
     const { username } = useContext(AuthContext);
@@ -22,7 +22,10 @@ const CreateComment = () => {
         try {
             const newComment = await commentService.create(scenarioId, comment);
             newComment.owner = { username }
-            
+
+            props.updateComments(newComment);
+
+            setComment("");
             return newComment;
         } catch (error) {
             alert(error);
@@ -42,7 +45,7 @@ const CreateComment = () => {
                     name="comment"
                     placeholder="Comment"
                     onChange={onChange}
-                    value={comment.comment}
+                    value={comment}
                 />
 
                 <button className="comment-btn">Add comment</button>

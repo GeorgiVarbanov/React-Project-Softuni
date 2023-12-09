@@ -6,20 +6,33 @@ import * as scenarioService from "../../../services/scenarioService.js";
 import AuthContext from "../../../contexts/authContext.jsx";
 import CreateComment from "./CreateComment/CreateComment.jsx";
 import CommentSection from "./CommentSection/CommentSection.jsx";
+import * as commentService from "../../../services/commentService.js"
 
 const ScenarioDetails = () => {
     const navigate = useNavigate();
-    const { userId , isAuthenticated } = useContext(AuthContext);
+    const { userId, isAuthenticated } = useContext(AuthContext);
     const [scenario, setScenario] = useState({});
     const { scenarioId } = useParams();
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        scenarioService.getById(scenarioId).then(setScenario);
+        scenarioService.getById(scenarioId)
+        .then(setScenario)
+        .catch((err) => console.log(err));
+
+        commentService.getAllComments(scenarioId)
+            .then((result) => setComments(result))
+            .catch((err) => {
+                console.log(err);
+            });
     }, [scenarioId])
 
+    const updateComments = (newComment) => {
+        setComments((prevComments) => [...prevComments, newComment]);
+    };
 
     const avatarStyle = {
-        backgroundImage: `url(${scenario.imageUrl})`, 
+        backgroundImage: `url(${scenario.imageUrl})`,
     };
 
     const deleteButtonClickHandler = async () => {
@@ -52,8 +65,8 @@ const ScenarioDetails = () => {
                 </div>
             </section>
 
-            <CommentSection />
-            {isAuthenticated && (<CreateComment />)}
+            <CommentSection comments={comments} />
+            {isAuthenticated && (<CreateComment updateComments={updateComments} />)}
         </>
     );
 }
