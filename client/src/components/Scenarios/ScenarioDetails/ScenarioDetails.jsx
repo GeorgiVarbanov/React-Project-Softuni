@@ -5,6 +5,7 @@ import "./ScenarioDetails.css";
 import * as scenarioService from "../../../services/scenarioService.js";
 import AuthContext from "../../../contexts/authContext.jsx";
 import CreateComment from "./CreateComment/CreateComment.jsx";
+import CommentSection from "./CommentSection/CommentSection.jsx";
 
 const ScenarioDetails = () => {
     const navigate = useNavigate();
@@ -51,15 +52,7 @@ const ScenarioDetails = () => {
                 </div>
             </section>
 
-            <section className="comments-section">
-                <div className="comment-header">Comments:</div>
-                <div className="comments">
-                    <ul>
-                        <li>Hello there</li>
-                        <li>Hello there</li>
-                    </ul>
-                </div>
-            </section>
+            <CommentSection />
             <CreateComment />
         </>
     );

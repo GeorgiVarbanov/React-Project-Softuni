@@ -1,0 +1,40 @@
+.comments-section {
+    width: 80%;
+    max-width: 1300px;
+    margin: 2% auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid #6e6e6e;
+    border-radius: 10px;
+    position: relative;
+    backdrop-filter: blur(10px);
+  }
+  
+  .comment-header {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #6e6e6e;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: RobotoRegular, sans-serif;
+  }
+  
+  .comments ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .comments li {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: rgba(240, 240, 240, 0.3);
+    border-radius: 10px;
+    color: white;
+    font-family: RobotoRegular, sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
+  }
