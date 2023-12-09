@@ -7,3 +7,14 @@ export const create = async (scenarioId, text) => {
 
     return result;
 }
+
+export const getAllComments = async (scenarioId) => {
+    const query = new URLSearchParams({
+        where: `scenarioId="${scenarioId}"`,
+        load: `owner=_ownerId:users`,
+    });
+
+    const result = await requests.get(`${baseUrl}?${query}`);
+
+    return result;
+}
