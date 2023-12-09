@@ -15,3 +15,7 @@ body {
     position: relative;
 }
 
+span {
+    color: blue;
+    font-family: RobotoRegular;
+}
