@@ -11,6 +11,7 @@ const RegisterFormKeys = {
     EMAIL: "email",
     PASSWORD: "password",
     REPASS: "rePass",
+    PROFILEPICTURE: "profilePicture",
 }
 
 
@@ -33,6 +34,15 @@ const Register = () => {
                 placeholder="Username"
                 onChange={onChange}
                 value={values[RegisterFormKeys.USERNAME]}
+            />
+            {errors.username && <span>{errors.username}</span>}
+            <input
+                type="profilePicture"
+                id="profilePicture"
+                name={RegisterFormKeys.PROFILEPICTURE}
+                placeholder="Profile picture"
+                onChange={onChange}
+                value={values[RegisterFormKeys.PROFILEPICTURE]}
             />
             {errors.username && <span>{errors.username}</span>}
             <input
