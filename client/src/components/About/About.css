@@ -34,7 +34,7 @@
     margin-top: 30px;
 }
 
-.card-container {
+.card-container-about {
     width: 15rem;
     border-radius: 1rem;
     box-shadow: 0 0.188em 1.55em rgb(100, 156, 156);
@@ -55,7 +55,7 @@
     border-radius: 1rem 1rem 0 0;
 }
 
-.card-title{
+.card-title-about{
     margin: 0.5rem auto;
     font-family: RobotoRegular;
     text-align: center;
