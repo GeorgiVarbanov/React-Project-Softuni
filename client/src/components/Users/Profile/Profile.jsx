@@ -9,16 +9,18 @@ import * as scenarioService from "../../../services/scenarioService.js";
 const Profile = () => {
 
     const [ownedScenarios, setOwnedScenarios] = useState([]);
+    const { email, username, userId } = useContext(AuthContext);
 
+    console.log(userId);
     useEffect(() => {
         scenarioService.getAll()
-            .then(result => setOwnedScenarios(result))
+            .then(result => setOwnedScenarios(result.filter((scenario) => scenario._ownerId === userId)))
             .catch(err => {
                 console.log(err);
             })
     }, [])
 
-    const { email, username } = useContext(AuthContext);
+
     return (
         <div className="profile-wrapper">
             <div className="left">
