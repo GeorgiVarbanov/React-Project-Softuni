@@ -6,7 +6,7 @@ import { AuthProvider } from "./contexts/authContext.jsx";
 import Header from './components/Header/Header.jsx'
 import Home from "./components/Home/Home.jsx";
 import About from "./components/About/About.jsx";
-import Scenarios from "./components/Scenarios/Scenarios.jsx";
+import Scenarios from "./components/Scenarios/ScenariosList/ScenariosList.jsx";
 import CreateScenario from "./components/Scenarios/CreateScenario/CreateScenario.jsx";
 import ScenarioDetails from "./components/Scenarios/ScenarioDetails/ScenarioDetails.jsx";
 import Login from "./components/Users/Login/Login.jsx";
