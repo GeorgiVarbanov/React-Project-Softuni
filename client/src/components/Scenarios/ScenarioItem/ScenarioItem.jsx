@@ -3,7 +3,7 @@ import "./ScenarioItem.css";
 
 const ScenarioItem = ({
     _id,
-    campaign,
+    scenario,
     imageUrl,
 }) => {
 
@@ -16,7 +16,7 @@ const ScenarioItem = ({
             <Link to={`/scenarios/${_id}`} className="table-cell">
                 <div className="table-cell-content" >
                     <div className="scenario-listing-item-avatar" style={avatarStyle}></div>
-                    <div className="sources-listing-item-title">{campaign}</div>
+                    <div className="sources-listing-item-title">{scenario}</div>
                 </div>
             </Link>
         </div>
